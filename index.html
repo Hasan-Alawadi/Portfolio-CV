@@ -1,0 +1,154 @@
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HasanMohammed,BSc</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .section-intro, .about-content, .button-section {
+            margin: 20px auto;
+            max-width: 1200px;
+            padding: 20px;
+        }
+        .section-intro h1, .section-intro h5 {
+            text-align: center;
+        }
+        .intro-info img {
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .about-content .col-six {
+            flex: 1 1 48%;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        .info-list, .skill-bars {
+            list-style: none;
+            padding: 0;
+        }
+        .info-list li, .skill-bars li {
+            margin-bottom: 10px;
+        }
+        .progress {
+            background-color: #f3f3f3;
+            border-radius: 10px;
+            height: 10px;
+            width: 100%;
+            position: relative;
+        }
+        .progress span {
+            position: absolute;
+            right: 10px;
+            top: -20px;
+        }
+        .percent90 { width: 90%; background-color: #4caf50; }
+        .percent85 { width: 85%; background-color: #2196f3; }
+        .percent70 { width: 70%; background-color: #ff9800; }
+        .percent95 { width: 95%; background-color: #9c27b0; }
+        .percent75 { width: 75%; background-color: #f44336; }
+        .button-section {
+            text-align: center;
+        }
+        .button {
+            padding: 10px 20px;
+            text-decoration: none;
+            border: 2px solid #000;
+            border-radius: 25px;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #000;
+            color: #fff;
+        }
+        .button-primary {
+            background: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+  
+    <section id="about">
+        <div class="row section-intro">
+            <div class="col-twelve">
+                <h5>Über mich</h5>
+                <h1>Lassen Sie mich vorstellen.</h1>
+                <div class="intro-info">
+                    <img src="https://i.postimg.cc/L5hgpDSm/me.jpg" alt="Bild von Hasan" width="200px">
+                    <p class="lead">
+                        Hier ist <b>Hasan Mohammed, BSc</b>. Motivation und Engagement zählen zu meinen zentralen Stärken, insbesondere in der produktiven und kooperativen Zusammenarbeit im Team. Persönliche und fachliche Weiterentwicklung hat für mich einen hohen Stellenwert. Der kontinuierliche Austausch mit KollegInnen sowie Eigenverantwortlichkeit sind besonders hervorzuheben. Als teamorientierte Persönlichkeit zeichne ich mich durch Zuverlässigkeit, Kooperationsfähigkeit und die Freude daran aus, gemeinsam mit anderen Verantwortung zu übernehmen und zu wachsen.
+                    </p>
+                </div>
+            </div>        
+        </div> <!-- /section-intro -->
+
+        <div class="row about-content">
+            <div class="col-six tab-full">
+                <h3>Profil</h3>
+                <p>
+                    Ich bin Software Developer. In meiner letzten Position war ich für folgende Aufgaben zuständig:
+                    <ul>
+                        <li>Mitarbeit im Störungsmanagement (3rd Level Support)</li>
+                        <li>Umsetzen von Kundenanforderungen</li>
+                        <li>Aktualisierung von Standardsoftware</li>
+                        <li>Erstellung und Durchführung von Tests</li>
+                        <li>Testautomatisierung</li>
+                        <li>Betreuung von Identity Management Systemen</li>
+                    </ul>
+                </p>
+                <ul class="info-list">
+                    <li><strong></strong> <span></span></li>
+                    <li><strong>Beruf:</strong> <span>Software Developer</span></li>
+                    <li><strong>Website:</strong> <span>Habibicodeacademy.com</span></li>
+                    <li><strong>Email:</strong> <span>bsc.hasan.mohammed@outlook.com</span></li>
+                </ul>
+            </div>
+
+            <div class="col-six tab-full">
+                <h3>Fähigkeiten</h3>
+                <p>Hier sind einige meiner technischen Fähigkeiten:</p>
+                <ul class="skill-bars">
+                    <li>
+                        <div class="progress percent90"><span>90%</span></div>
+                        <strong>HTML5</strong>
+                    </li>
+                    <li>
+                        <div class="progress percent85"><span>85%</span></div>
+                        <strong>CSS3</strong>
+                    </li>
+                    <li>
+                        <div class="progress percent70"><span>70%</span></div>
+                        <strong>JavaScript (JQuery)</strong>
+                    </li>
+                    <li>
+                        <div class="progress percent95"><span>95%</span></div>
+                        <strong>SQL</strong>
+                    </li>
+                    <li>
+                        <div class="progress percent75"><span>75%</span></div>
+                        <strong>Codepen.io</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row button-section">
+            <div class="col-twelve">
+                <a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a>
+                <a href="#" title="Download CV" class="button button-primary">Download CV</a>
+            </div>        
+        </div>
+    </section>
+
+</body>
+</html>
