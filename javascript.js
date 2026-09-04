@@ -1,21 +1,171 @@
-// Smooth Scroll Funktion für den "Hire Me"-Button
-document.querySelector('.smoothscroll').addEventListener('click', function(event) {
-    event.preventDefault();
-    const targetId = this.getAttribute('href').substring(1);
-    document.getElementById(targetId).scrollIntoView({
-        behavior: 'smooth'
+/* ==========================================
+   HASAN LABS
+   JavaScript
+========================================== */
+
+
+// ============================
+// CURRENT YEAR
+// ============================
+
+const currentYear = document.getElementById("currentYear");
+
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
+
+
+
+// ============================
+// MOBILE MENU
+// ============================
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+
+if (menuToggle && navLinks) {
+
+    menuToggle.addEventListener("click", function () {
+
+        navLinks.classList.toggle("open");
+
     });
+
+}
+
+
+
+// Close mobile menu after clicking a link
+
+const navigationLinks =
+    document.querySelectorAll(".nav-links a");
+
+
+navigationLinks.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        navLinks.classList.remove("open");
+
+    });
+
 });
 
-// Funktion zum Download des CVs
-document.getElementById('downloadCV').addEventListener('click', function(event) {
-    event.preventDefault();
-    // Füge hier den tatsächlichen CV-Download-Link ein
-    const cvLink = 'path/to/your/cv.pdf';  // Beispiel: '/files/Hasan_CV.pdf'
-    const link = document.createElement('a');
-    link.href = cvLink;
-    link.download = 'Hasan_Mohammed_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+
+
+// ============================
+// SCROLL ANIMATION
+// ============================
+
+const animatedElements =
+    document.querySelectorAll(
+        ".card, .about-grid, .vision-box"
+    );
+
+
+const observer = new IntersectionObserver(
+
+    function (entries) {
+
+        entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.15
+    }
+
+);
+
+
+animatedElements.forEach(function (element) {
+
+    observer.observe(element);
+
+});
+
+
+
+// ============================
+// ACTIVE NAVIGATION
+// ============================
+
+const sections =
+    document.querySelectorAll("section[id]");
+
+
+window.addEventListener("scroll", function () {
+
+    let currentSection = "";
+
+
+    sections.forEach(function (section) {
+
+        const sectionTop =
+            section.offsetTop - 150;
+
+
+        if (window.scrollY >= sectionTop) {
+
+            currentSection =
+                section.getAttribute("id");
+
+        }
+
+    });
+
+
+    navigationLinks.forEach(function (link) {
+
+        link.classList.remove("active");
+
+
+        if (
+            link.getAttribute("href") ===
+            "#" + currentSection
+        ) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+
+
+// ============================
+// NAVBAR EFFECT
+// ============================
+
+const navbar =
+    document.getElementById("navbar");
+
+
+window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 50) {
+
+        navbar.style.background =
+            "rgba(7, 11, 19, 0.97)";
+
+    }
+
+    else {
+
+        navbar.style.background =
+            "rgba(11, 17, 32, 0.90)";
+
+    }
+
 });
