@@ -1,154 +1,965 @@
-<html lang="de">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HasanMohammed,BSc</title>
+
+    <title>Hasan Alawadi | IT, BPM & AI Solutions</title>
+
+    <meta name="description"
+          content="Portfolio of Hasan Alawadi – IT Service Management, Digital Workplace, Business Process Management, AI, Automation and Digital Solutions.">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-        .section-intro, .about-content, .button-section {
-            margin: 20px auto;
-            max-width: 1200px;
-            padding: 20px;
-        }
-        .section-intro h1, .section-intro h5 {
-            text-align: center;
-        }
-        .intro-info img {
-            border-radius: 50%;
-            display: block;
-            margin: 0 auto;
-        }
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .about-content .col-six {
-            flex: 1 1 48%;
-            box-sizing: border-box;
-            padding: 20px;
-        }
-        .info-list, .skill-bars {
-            list-style: none;
+        * {
+            margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        .info-list li, .skill-bars li {
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 17, 32, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 100px 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-label {
+            color: #38bdf8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+            font-weight: 700;
             margin-bottom: 10px;
         }
-        .progress {
-            background-color: #f3f3f3;
-            border-radius: 10px;
-            height: 10px;
-            width: 100%;
-            position: relative;
+
+        .section-title {
+            font-size: 40px;
+            color: white;
+            margin-bottom: 20px;
         }
-        .progress span {
-            position: absolute;
-            right: 10px;
-            top: -20px;
+
+        .section-description {
+            max-width: 750px;
+            color: #94a3b8;
+            margin-bottom: 45px;
         }
-        .percent90 { width: 90%; background-color: #4caf50; }
-        .percent85 { width: 85%; background-color: #2196f3; }
-        .percent70 { width: 70%; background-color: #ff9800; }
-        .percent95 { width: 95%; background-color: #9c27b0; }
-        .percent75 { width: 75%; background-color: #f44336; }
-        .button-section {
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            background:
+                radial-gradient(circle at top right, rgba(56,189,248,.15), transparent 35%),
+                radial-gradient(circle at bottom left, rgba(99,102,241,.12), transparent 35%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 0.6fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-small {
+            color: #38bdf8;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 7vw, 78px);
+            line-height: 1.05;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .hero p {
+            max-width: 750px;
+            color: #94a3b8;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .hero-image {
             text-align: center;
         }
-        .button {
-            padding: 10px 20px;
+
+        .hero-image img {
+            width: 290px;
+            height: 290px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #1e293b;
+            box-shadow: 0 0 60px rgba(56,189,248,.18);
+        }
+
+        /* BUTTONS */
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 8px;
             text-decoration: none;
-            border: 2px solid #000;
-            border-radius: 25px;
-            margin: 5px;
-            transition: background 0.3s;
+            font-weight: 600;
+            transition: 0.3s;
         }
-        .button:hover {
-            background: #000;
-            color: #fff;
+
+        .btn-primary {
+            background: #38bdf8;
+            color: #07111f;
         }
-        .button-primary {
-            background: #000;
-            color: #fff;
+
+        .btn-primary:hover {
+            background: #7dd3fc;
+            transform: translateY(-2px);
         }
+
+        .btn-outline {
+            border: 1px solid #475569;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+        /* CARDS */
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #111827;
+            border: 1px solid #1e293b;
+            padding: 30px;
+            border-radius: 14px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #38bdf8;
+            box-shadow: 0 15px 40px rgba(0,0,0,.25);
+        }
+
+        .card-icon {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #94a3b8;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .about-grid p {
+            color: #94a3b8;
+            margin-bottom: 18px;
+        }
+
+        .highlights {
+            list-style: none;
+        }
+
+        .highlights li {
+            padding: 10px 0;
+            color: #cbd5e1;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .highlights li::before {
+            content: "→";
+            color: #38bdf8;
+            margin-right: 10px;
+        }
+
+        /* TECHNOLOGIES */
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tag {
+            padding: 9px 15px;
+            background: #111827;
+            border: 1px solid #334155;
+            border-radius: 50px;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+
+        .project-card .project-category {
+            color: #38bdf8;
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        /* VISION */
+
+        .vision {
+            text-align: center;
+        }
+
+        .vision-box {
+            max-width: 900px;
+            margin: auto;
+            background: linear-gradient(
+                135deg,
+                rgba(56,189,248,.08),
+                rgba(99,102,241,.08)
+            );
+            border: 1px solid #334155;
+            padding: 55px;
+            border-radius: 20px;
+        }
+
+        .vision-box p {
+            font-size: 20px;
+            color: #cbd5e1;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #1e293b;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .hero-grid,
+            .about-grid,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image img {
+                width: 220px;
+                height: 220px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+        }
+
     </style>
 </head>
+
 <body>
-  
-    <section id="about">
-        <div class="row section-intro">
-            <div class="col-twelve">
-                <h5>Über mich</h5>
-                <h1>Lassen Sie mich vorstellen.</h1>
-                <div class="intro-info">
-                    <img src="https://i.postimg.cc/L5hgpDSm/me.jpg" alt="Bild von Hasan" width="200px">
-                    <p class="lead">
-                        Hier ist <b>Hasan Mohammed, BSc</b>. Motivation und Engagement zählen zu meinen zentralen Stärken, insbesondere in der produktiven und kooperativen Zusammenarbeit im Team. Persönliche und fachliche Weiterentwicklung hat für mich einen hohen Stellenwert. Der kontinuierliche Austausch mit KollegInnen sowie Eigenverantwortlichkeit sind besonders hervorzuheben. Als teamorientierte Persönlichkeit zeichne ich mich durch Zuverlässigkeit, Kooperationsfähigkeit und die Freude daran aus, gemeinsam mit anderen Verantwortung zu übernehmen und zu wachsen.
-                    </p>
-                </div>
-            </div>        
-        </div> <!-- /section-intro -->
 
-        <div class="row about-content">
-            <div class="col-six tab-full">
-                <h3>Profil</h3>
+<!-- Navigation -->
+
+<nav>
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+            Hasan<span>Labs</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#cv">My CV</a></li>
+            <li><a href="#labs">My Labs</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#solutions">AI & Solutions</a></li>
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <div class="hero-small">
+                IT • BUSINESS PROCESSES • AI • DIGITAL SOLUTIONS
+            </div>
+
+            <h1>
+                Hi, I'm <span>Hasan Alawadi.</span>
+            </h1>
+
+            <h2>
+                IT Service Manager | Digital Workplace |
+                Business Process Management | AI & Automation
+            </h2>
+
+            <p>
+                I connect technology, business processes and modern digital
+                solutions to improve the way organizations work.
+
+                My professional focus includes IT Service Management,
+                Digital Workplace technologies, Business Process Management,
+                cloud solutions, automation and Artificial Intelligence.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn btn-primary">
+                    Explore My Work
+                </a>
+
+                <a href="#cv" class="btn btn-outline">
+                    View My CV
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="https://i.postimg.cc/L5hgpDSm/me.jpg"
+                alt="Hasan Alawadi">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-label">About Me</div>
+
+        <h2 class="section-title">
+            Technology meets business.
+        </h2>
+
+        <div class="about-grid">
+
+            <div>
+
                 <p>
-                    Ich bin Software Developer. In meiner letzten Position war ich für folgende Aufgaben zuständig:
-                    <ul>
-                        <li>Mitarbeit im Störungsmanagement (3rd Level Support)</li>
-                        <li>Umsetzen von Kundenanforderungen</li>
-                        <li>Aktualisierung von Standardsoftware</li>
-                        <li>Erstellung und Durchführung von Tests</li>
-                        <li>Testautomatisierung</li>
-                        <li>Betreuung von Identity Management Systemen</li>
-                    </ul>
+                    I'm an IT professional based in
+                    <strong>Vienna, Austria</strong>,
+                    with a background in Computer Science and professional
+                    experience across IT operations, software development,
+                    digital workplace services and IT service management.
                 </p>
-                <ul class="info-list">
-                    <li><strong></strong> <span></span></li>
-                    <li><strong>Beruf:</strong> <span>Software Developer</span></li>
-                    <li><strong>Website:</strong> <span>Habibicodeacademy.com</span></li>
-                    <li><strong>Email:</strong> <span>bsc.hasan.mohammed@outlook.com</span></li>
-                </ul>
+
+                <p>
+                    I currently work in the
+                    <strong>Digital Workplace environment</strong>,
+                    where I focus on service quality, ticket and escalation
+                    management, workplace technologies and coordination
+                    between different technical teams.
+                </p>
+
+                <p>
+                    In parallel, I am expanding my knowledge in
+                    <strong>Business Process Engineering & Management</strong>
+                    with a particular interest in process modelling,
+                    optimization, automation and digital transformation.
+                </p>
+
             </div>
 
-            <div class="col-six tab-full">
-                <h3>Fähigkeiten</h3>
-                <p>Hier sind einige meiner technischen Fähigkeiten:</p>
-                <ul class="skill-bars">
-                    <li>
-                        <div class="progress percent90"><span>90%</span></div>
-                        <strong>HTML5</strong>
-                    </li>
-                    <li>
-                        <div class="progress percent85"><span>85%</span></div>
-                        <strong>CSS3</strong>
-                    </li>
-                    <li>
-                        <div class="progress percent70"><span>70%</span></div>
-                        <strong>JavaScript (JQuery)</strong>
-                    </li>
-                    <li>
-                        <div class="progress percent95"><span>95%</span></div>
-                        <strong>SQL</strong>
-                    </li>
-                    <li>
-                        <div class="progress percent75"><span>75%</span></div>
-                        <strong>Codepen.io</strong>
-                    </li>
+            <div>
+
+                <ul class="highlights">
+                    <li>BSc in Computer Science</li>
+                    <li>IT Service Management</li>
+                    <li>Digital Workplace Technologies</li>
+                    <li>Business Process Management</li>
+                    <li>Process Optimization</li>
+                    <li>AI & Automation</li>
+                    <li>Cloud & Microsoft Technologies</li>
+                    <li>Digital Transformation</li>
                 </ul>
+
             </div>
+
         </div>
 
-        <div class="row button-section">
-            <div class="col-twelve">
-                <a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a>
-                <a href="#" title="Download CV" class="button button-primary">Download CV</a>
-            </div>        
+    </div>
+
+</section>
+
+
+<!-- CV -->
+
+<section id="cv">
+
+    <div class="container">
+
+        <div class="section-label">My CV</div>
+
+        <h2 class="section-title">
+            Experience & Background
+        </h2>
+
+        <p class="section-description">
+            My professional journey combines software development,
+            identity technologies, IT operations, digital workplace
+            services and business process management.
+        </p>
+
+        <div class="grid-3">
+
+            <div class="card">
+
+                <div class="card-icon">💼</div>
+
+                <h3>IT Service Management</h3>
+
+                <p>
+                    Service quality, incident and escalation coordination,
+                    ticket management, service improvement and collaboration
+                    between technical and business teams.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon">🖥️</div>
+
+                <h3>Digital Workplace</h3>
+
+                <p>
+                    Experience with Microsoft workplace technologies,
+                    endpoint management, Citrix environments,
+                    Microsoft 365 and modern workplace services.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon">🎓</div>
+
+                <h3>Education</h3>
+
+                <p>
+                    Bachelor of Science in Computer Science and continued
+                    education in Business Process Engineering & Management.
+                </p>
+
+            </div>
+
         </div>
-    </section>
+
+        <br><br>
+
+        <a href="Hasan-Alawadi-CV.pdf"
+           class="btn btn-primary"
+           target="_blank">
+            Download CV
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- LABS -->
+
+<section id="labs">
+
+    <div class="container">
+
+        <div class="section-label">My Labs</div>
+
+        <h2 class="section-title">
+            Learning by building.
+        </h2>
+
+        <p class="section-description">
+            Hasan Labs is my personal technology environment where I
+            experiment with platforms, processes and ideas before turning
+            them into practical solutions.
+        </p>
+
+        <div class="grid-3">
+
+            <div class="card">
+
+                <div class="card-icon">⚙️</div>
+
+                <h3>ITSM Lab</h3>
+
+                <p>
+                    Service catalogues, incident management,
+                    service requests, ticket routing,
+                    workflows and service improvement concepts
+                    using tools such as Halo ITSM and ServiceNow.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon">📊</div>
+
+                <h3>BPM Lab</h3>
+
+                <p>
+                    BPMN process modelling, IST/SOLL analysis,
+                    process optimization and business process
+                    documentation using ADONIS and related methods.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon">☁️</div>
+
+                <h3>Cloud & Workplace Lab</h3>
+
+                <p>
+                    Experiments and documentation around Azure,
+                    Microsoft Intune, Citrix, Microsoft 365,
+                    endpoint management and workplace technologies.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-label">Projects</div>
+
+        <h2 class="section-title">
+            Selected Work & Projects
+        </h2>
+
+        <p class="section-description">
+            Projects combining technology, business analysis,
+            process design and digital transformation.
+        </p>
+
+        <div class="grid-3">
+
+            <div class="card project-card">
+
+                <div class="project-category">
+                    Business Process Management
+                </div>
+
+                <h3>Process Optimization</h3>
+
+                <p>
+                    Analysis and redesign of business processes using
+                    BPMN, IST/SOLL modelling, process metrics and
+                    optimization methods.
+                </p>
+
+            </div>
+
+            <div class="card project-card">
+
+                <div class="project-category">
+                    IT Service Management
+                </div>
+
+                <h3>Service Catalogue & ITSM</h3>
+
+                <p>
+                    Concepts for service catalogues, ticket routing,
+                    responsibilities, SLA transparency and IT service
+                    management workflows.
+                </p>
+
+            </div>
+
+            <div class="card project-card">
+
+                <div class="project-category">
+                    AI & Automation
+                </div>
+
+                <h3>AI Business Solutions</h3>
+
+                <p>
+                    Exploring how AI and automation can help organizations
+                    simplify administrative processes, improve information
+                    access and reduce repetitive work.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- AI & SOLUTIONS -->
+
+<section id="solutions">
+
+    <div class="container">
+
+        <div class="section-label">AI & Solutions</div>
+
+        <h2 class="section-title">
+            From problems to practical solutions.
+        </h2>
+
+        <p class="section-description">
+            I am particularly interested in identifying everyday
+            operational problems and solving them through technology,
+            automation and better process design.
+        </p>
+
+        <div class="grid-3">
+
+            <div class="card">
+
+                <div class="card-icon">🤖</div>
+
+                <h3>AI Automation</h3>
+
+                <p>
+                    Using AI to support knowledge management,
+                    repetitive tasks, service desks, document processing
+                    and business operations.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon">🔄</div>
+
+                <h3>Process Improvement</h3>
+
+                <p>
+                    Understanding existing processes, identifying
+                    bottlenecks and designing simpler and more efficient
+                    workflows.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon">💡</div>
+
+                <h3>Digital Solutions</h3>
+
+                <p>
+                    Combining web technologies, cloud services,
+                    IT platforms and automation to create practical
+                    solutions for organizations.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TOOLS -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">Technology</div>
+
+        <h2 class="section-title">
+            Tools & Technologies
+        </h2>
+
+        <div class="tags">
+
+            <span class="tag">Halo ITSM</span>
+            <span class="tag">ServiceNow</span>
+            <span class="tag">Microsoft Azure</span>
+            <span class="tag">Microsoft Intune</span>
+            <span class="tag">Citrix</span>
+            <span class="tag">Microsoft 365</span>
+            <span class="tag">SharePoint</span>
+            <span class="tag">SCCM</span>
+
+            <span class="tag">BPMN</span>
+            <span class="tag">ADONIS</span>
+
+            <span class="tag">Identity Management</span>
+
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+
+            <span class="tag">AI</span>
+            <span class="tag">Automation</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- VISION -->
+
+<section id="vision" class="vision">
+
+    <div class="container">
+
+        <div class="vision-box">
+
+            <div class="section-label">
+                My Motivation & Vision
+            </div>
+
+            <h2 class="section-title">
+                Connecting technology, processes and people.
+            </h2>
+
+            <p>
+                My goal is not simply to work with technology.
+                I want to understand how organizations operate,
+                identify where processes can be improved and use
+                technology, automation and Artificial Intelligence
+                to create meaningful solutions.
+
+                <br><br>
+
+                In the long term, I want to contribute to digital
+                transformation projects across
+                <strong>Europe and the Middle East</strong>,
+                connecting technical expertise with business needs
+                and practical implementation.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+    <div class="container">
+
+        <div class="section-label">Let's Connect</div>
+
+        <h2 class="section-title">
+            Interested in technology, processes or AI?
+        </h2>
+
+        <p>
+            I'm always interested in exchanging ideas about
+            IT Service Management, Digital Workplace,
+            Business Process Management, Artificial Intelligence,
+            Cloud Technologies and Digital Transformation.
+        </p>
+
+        <div class="buttons" style="justify-content:center;">
+
+            <a href="mailto:your-email@example.com"
+               class="btn btn-primary">
+                Contact Me
+            </a>
+
+            <a href="https://www.linkedin.com/"
+               target="_blank"
+               class="btn btn-outline">
+                LinkedIn
+            </a>
+
+            <a href="https://github.com/"
+               target="_blank"
+               class="btn btn-outline">
+                GitHub
+            </a>
+
+        </div>
+
+        <br>
+
+        <p>
+            📍 Vienna, Austria
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+    © 2026 Hasan Alawadi · Hasan Labs · Vienna, Austria
+</footer>
+
 
 </body>
 </html>
