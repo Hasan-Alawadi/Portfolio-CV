@@ -2,28 +2,828 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <title>Hasan Labs | Hasan Alawadi</title>
+    <title>
+        Hasan Labs | Hasan Alawadi – IT, BPM & AI Solutions
+    </title>
 
-    <meta
-        name="description"
-        content="Hasan Labs – Personal portfolio of Hasan Alawadi focused on IT Service Management, Digital Workplace, Business Process Management, AI, Automation and Digital Solutions."
-    >
+    <meta name="description"
+          content="Hasan Labs – Personal technology portfolio of Hasan Alawadi focused on IT Service Management, Digital Workplace, Business Process Management, AI, Automation and Digital Solutions.">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <meta name="author" content="Hasan Alawadi">
+
+    <!-- ================================
+         ALL CSS
+    ================================= -->
+
+    <style>
+
+        /* ==========================================
+           GENERAL
+        ========================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background: #0b1120;
+
+            color: #e2e8f0;
+
+            line-height: 1.7;
+        }
+
+        .container {
+
+            width: 90%;
+
+            max-width: 1200px;
+
+            margin: auto;
+        }
+
+        section {
+
+            padding: 110px 0;
+
+            scroll-margin-top: 75px;
+        }
+
+        .dark-section {
+            background: #080d18;
+        }
+
+
+        /* ==========================================
+           NAVIGATION
+        ========================================== */
+
+        nav {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background: rgba(11, 17, 32, 0.90);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.06);
+
+            transition: 0.3s;
+        }
+
+        .nav-container {
+
+            width: 90%;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            height: 75px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .logo {
+
+            color: white;
+
+            font-size: 23px;
+
+            font-weight: 800;
+
+            text-decoration: none;
+
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 23px;
+
+            list-style: none;
+        }
+
+        .nav-links a {
+
+            text-decoration: none;
+
+            color: #cbd5e1;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+
+            color: #38bdf8;
+        }
+
+        .menu-toggle {
+
+            display: none;
+
+            border: 0;
+
+            background: transparent;
+
+            color: white;
+
+            font-size: 27px;
+
+            cursor: pointer;
+        }
+
+
+        /* ==========================================
+           HERO / HOME
+        ========================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding-top: 130px;
+
+            background:
+
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(56, 189, 248, 0.16),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 10% 90%,
+                    rgba(99, 102, 241, 0.11),
+                    transparent 30%
+                );
+        }
+
+        .hero-grid {
+
+            display: grid;
+
+            grid-template-columns: 1.4fr 0.6fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .hero-label {
+
+            color: #38bdf8;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+
+            font-size: clamp(46px, 7vw, 76px);
+
+            line-height: 1.05;
+
+            color: white;
+
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+
+            color: #cbd5e1;
+
+            font-size: 21px;
+
+            font-weight: 500;
+
+            max-width: 850px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero-description {
+
+            color: #94a3b8;
+
+            max-width: 760px;
+
+            font-size: 17px;
+
+            margin-bottom: 34px;
+        }
+
+        .hero-image {
+
+            display: flex;
+
+            justify-content: center;
+        }
+
+        .hero-image img {
+
+            width: 285px;
+
+            height: 285px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid #1e293b;
+
+            box-shadow:
+                0 0 70px rgba(56, 189, 248, 0.20);
+
+            transition: 0.4s;
+        }
+
+        .hero-image img:hover {
+
+            transform: scale(1.03);
+        }
+
+
+        /* ==========================================
+           BUTTONS
+        ========================================== */
+
+        .buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+        }
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+
+            background: #38bdf8;
+
+            color: #07111f;
+        }
+
+        .btn-primary:hover {
+
+            background: #7dd3fc;
+
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+
+            border: 1px solid #475569;
+
+            color: white;
+        }
+
+        .btn-outline:hover {
+
+            border-color: #38bdf8;
+
+            color: #38bdf8;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* ==========================================
+           SOCIAL LINKS
+        ========================================== */
+
+        .social-links {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 20px;
+
+            margin-top: 28px;
+        }
+
+        .social-links a {
+
+            text-decoration: none;
+
+            color: #94a3b8;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+
+            color: #38bdf8;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ==========================================
+           SECTION TITLES
+        ========================================== */
+
+        .section-label {
+
+            color: #38bdf8;
+
+            text-transform: uppercase;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+
+            font-size: 40px;
+
+            color: white;
+
+            line-height: 1.2;
+
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+
+            max-width: 760px;
+
+            color: #94a3b8;
+
+            margin-bottom: 45px;
+
+            font-size: 17px;
+        }
+
+
+        /* ==========================================
+           ABOUT
+        ========================================== */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+        }
+
+        .about-grid p {
+
+            color: #94a3b8;
+
+            margin-bottom: 20px;
+        }
+
+        .about-grid strong {
+            color: #e2e8f0;
+        }
+
+        .highlights {
+
+            list-style: none;
+        }
+
+        .highlights li {
+
+            padding: 12px 0;
+
+            border-bottom: 1px solid #1e293b;
+
+            color: #cbd5e1;
+        }
+
+        .highlights li::before {
+
+            content: "→";
+
+            color: #38bdf8;
+
+            margin-right: 12px;
+        }
+
+
+        /* ==========================================
+           CARDS
+        ========================================== */
+
+        .grid-3 {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .card {
+
+            padding: 30px;
+
+            background: #111827;
+
+            border: 1px solid #1e293b;
+
+            border-radius: 14px;
+
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+
+            transform: translateY(-7px);
+
+            border-color: #38bdf8;
+
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.30);
+        }
+
+        .card h3 {
+
+            color: white;
+
+            margin-bottom: 12px;
+
+            font-size: 20px;
+        }
+
+        .card p {
+
+            color: #94a3b8;
+        }
+
+        .card-icon {
+
+            font-size: 30px;
+
+            margin-bottom: 18px;
+        }
+
+        .project-category {
+
+            display: block;
+
+            color: #38bdf8;
+
+            text-transform: uppercase;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 12px;
+        }
+
+        .cv-button {
+
+            margin-top: 40px;
+        }
+
+
+        /* ==========================================
+           TECHNOLOGY TAGS
+        ========================================== */
+
+        .tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .tags span {
+
+            background: #111827;
+
+            border: 1px solid #334155;
+
+            border-radius: 50px;
+
+            padding: 9px 16px;
+
+            color: #cbd5e1;
+
+            transition: 0.3s;
+        }
+
+        .tags span:hover {
+
+            border-color: #38bdf8;
+
+            color: #38bdf8;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ==========================================
+           VISION
+        ========================================== */
+
+        .vision-box {
+
+            max-width: 950px;
+
+            margin: auto;
+
+            padding: 55px;
+
+            border-radius: 20px;
+
+            border: 1px solid #334155;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(56, 189, 248, 0.07),
+                    rgba(99, 102, 241, 0.06)
+                );
+        }
+
+        .vision-box p {
+
+            color: #cbd5e1;
+
+            margin-bottom: 20px;
+
+            font-size: 18px;
+        }
+
+
+        /* ==========================================
+           CONTACT
+        ========================================== */
+
+        .contact {
+
+            text-align: center;
+        }
+
+        .contact-description {
+
+            margin-left: auto;
+
+            margin-right: auto;
+        }
+
+        .contact-buttons {
+
+            justify-content: center;
+        }
+
+        .location {
+
+            margin-top: 35px;
+
+            color: #94a3b8;
+        }
+
+
+        /* ==========================================
+           FOOTER
+        ========================================== */
+
+        footer {
+
+            background: #070b13;
+
+            border-top: 1px solid #1e293b;
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #64748b;
+
+            font-size: 14px;
+        }
+
+
+        /* ==========================================
+           ANIMATION
+        ========================================== */
+
+        .fade-element {
+
+            opacity: 0;
+
+            transform: translateY(25px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .fade-element.show {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* ==========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 900px) {
+
+            section {
+
+                padding: 85px 0;
+            }
+
+            .hero-grid {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .hero-image {
+
+                order: -1;
+            }
+
+            .hero-image img {
+
+                width: 210px;
+
+                height: 210px;
+            }
+
+            .hero-description {
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+            .buttons,
+            .social-links {
+
+                justify-content: center;
+            }
+
+            .about-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+            .grid-3 {
+
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+
+                font-size: 32px;
+            }
+
+            .nav-links {
+
+                display: none;
+
+                position: absolute;
+
+                top: 75px;
+
+                left: 0;
+
+                width: 100%;
+
+                flex-direction: column;
+
+                background: #0b1120;
+
+                padding: 25px;
+
+                border-bottom: 1px solid #1e293b;
+            }
+
+            .nav-links.open {
+
+                display: flex;
+            }
+
+            .menu-toggle {
+
+                display: block;
+            }
+
+            .vision-box {
+
+                padding: 35px 25px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
+<!-- ==========================================
      NAVIGATION
-========================= -->
+========================================== -->
 
 <nav id="navbar">
 
@@ -34,8 +834,13 @@
         </a>
 
 
-        <button class="menu-toggle" id="menuToggle">
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation menu">
+
             ☰
+
         </button>
 
 
@@ -81,9 +886,9 @@
 
 
 
-<!-- =========================
+<!-- ==========================================
      HOME
-========================= -->
+========================================== -->
 
 <section class="hero" id="home">
 
@@ -93,26 +898,38 @@
         <div class="hero-content">
 
             <p class="hero-label">
+
                 HASAN LABS · TECHNOLOGY · PROCESSES · AI · SOLUTIONS
+
             </p>
 
 
             <h1>
+
                 Hi, I'm
-                <span>Hasan Alawadi.</span>
+
+                <span>
+                    Hasan Alawadi.
+                </span>
+
             </h1>
 
 
             <h2>
-                IT Service Management · Digital Workplace ·
-                Business Process Management · AI & Automation
+
+                IT Service Management ·
+                Digital Workplace ·
+                Business Process Management ·
+                AI & Automation
+
             </h2>
 
 
             <p class="hero-description">
 
-                I connect technology, business processes and modern
-                digital solutions to improve the way organizations work.
+                I connect technology, business processes
+                and modern digital solutions to improve
+                the way organizations work.
 
                 My focus includes IT Service Management,
                 Digital Workplace technologies,
@@ -124,12 +941,57 @@
 
             <div class="buttons">
 
-                <a href="#projects" class="btn btn-primary">
+                <a
+                    href="#projects"
+                    class="btn btn-primary">
+
                     Explore My Work
+
                 </a>
 
-                <a href="#cv" class="btn btn-outline">
+
+                <a
+                    href="#cv"
+                    class="btn btn-outline">
+
                     View My CV
+
+                </a>
+
+            </div>
+
+
+            <!-- SOCIAL MEDIA -->
+
+            <div class="social-links">
+
+                <a
+                    href="https://www.linkedin.com/in/hasan-mohammed-bsc-bb83b1329"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    LinkedIn ↗
+
+                </a>
+
+
+                <a
+                    href="https://github.com/Hasan-Alawadi"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    GitHub ↗
+
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/hasan.jaafar.alwadi"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Instagram ↗
+
                 </a>
 
             </div>
@@ -142,8 +1004,7 @@
 
             <img
                 src="images/me.jpg"
-                alt="Hasan Alawadi"
-            >
+                alt="Hasan Alawadi">
 
         </div>
 
@@ -154,9 +1015,9 @@
 
 
 
-<!-- =========================
+<!-- ==========================================
      ABOUT
-========================= -->
+========================================== -->
 
 <section id="about">
 
@@ -173,33 +1034,43 @@
         </h2>
 
 
-        <div class="about-grid">
+        <div class="about-grid fade-element">
 
 
             <div>
 
                 <p>
+
                     I'm an IT professional based in
-                    <strong>Vienna, Austria</strong>,
+
+                    <strong>
+                        Vienna, Austria
+                    </strong>,
+
                     with a background in Computer Science
-                    and professional experience across IT operations,
-                    software development, Digital Workplace
-                    and IT Service Management.
+                    and professional experience across
+                    IT operations, software development,
+                    Digital Workplace and IT Service Management.
+
                 </p>
 
 
                 <p>
+
                     My work focuses on service quality,
                     ticket and escalation management,
                     workplace technologies and coordination
                     between technical teams and business requirements.
+
                 </p>
 
 
                 <p>
+
                     I'm also interested in Business Process Management,
-                    process optimization, automation
-                    and digital transformation.
+                    process optimization, automation,
+                    Artificial Intelligence and digital transformation.
+
                 </p>
 
             </div>
@@ -210,21 +1081,37 @@
 
                 <ul class="highlights">
 
-                    <li>BSc in Computer Science</li>
+                    <li>
+                        BSc in Computer Science
+                    </li>
 
-                    <li>IT Service Management</li>
+                    <li>
+                        IT Service Management
+                    </li>
 
-                    <li>Digital Workplace</li>
+                    <li>
+                        Digital Workplace
+                    </li>
 
-                    <li>Business Process Management</li>
+                    <li>
+                        Business Process Management
+                    </li>
 
-                    <li>Process Optimization</li>
+                    <li>
+                        Process Optimization
+                    </li>
 
-                    <li>Artificial Intelligence</li>
+                    <li>
+                        Artificial Intelligence
+                    </li>
 
-                    <li>Automation</li>
+                    <li>
+                        Automation
+                    </li>
 
-                    <li>Cloud Technologies</li>
+                    <li>
+                        Cloud Technologies
+                    </li>
 
                 </ul>
 
@@ -239,9 +1126,9 @@
 
 
 
-<!-- =========================
-     CV
-========================= -->
+<!-- ==========================================
+     MY CV
+========================================== -->
 
 <section id="cv" class="dark-section">
 
@@ -260,18 +1147,21 @@
 
         <p class="section-description">
 
-            My professional journey combines software development,
-            identity technologies, IT operations,
-            Digital Workplace and Business Process Management.
+            My professional journey combines
+            software development,
+            identity technologies,
+            IT operations,
+            Digital Workplace,
+            IT Service Management
+            and Business Process Management.
 
         </p>
-
 
 
         <div class="grid-3">
 
 
-            <article class="card">
+            <article class="card fade-element">
 
                 <div class="card-icon">
                     💼
@@ -282,16 +1172,22 @@
                 </h3>
 
                 <p>
-                    Service quality, incident management,
+
+                    Service quality,
+                    incident management,
                     escalation coordination,
-                    ticket management and service improvement.
+                    ticket management,
+                    service improvement
+                    and collaboration between
+                    technical teams.
+
                 </p>
 
             </article>
 
 
 
-            <article class="card">
+            <article class="card fade-element">
 
                 <div class="card-icon">
                     🖥️
@@ -302,16 +1198,20 @@
                 </h3>
 
                 <p>
+
                     Microsoft workplace technologies,
-                    Citrix, endpoint management,
-                    Microsoft 365 and modern workplace services.
+                    Citrix,
+                    endpoint management,
+                    Microsoft 365
+                    and modern workplace services.
+
                 </p>
 
             </article>
 
 
 
-            <article class="card">
+            <article class="card fade-element">
 
                 <div class="card-icon">
                     🎓
@@ -322,9 +1222,12 @@
                 </h3>
 
                 <p>
+
                     Bachelor of Science in Computer Science
                     with continued development in
-                    Business Process Engineering & Management.
+                    Business Process Engineering
+                    & Management.
+
                 </p>
 
             </article>
@@ -333,15 +1236,16 @@
         </div>
 
 
-
         <div class="cv-button">
 
             <a
                 href="files/Hasan-Alawadi-CV.pdf"
-                class="btn btn-primary"
                 target="_blank"
-            >
+                rel="noopener noreferrer"
+                class="btn btn-primary">
+
                 Download CV
+
             </a>
 
         </div>
@@ -353,9 +1257,9 @@
 
 
 
-<!-- =========================
-     LABS
-========================= -->
+<!-- ==========================================
+     MY LABS
+========================================== -->
 
 <section id="labs">
 
@@ -375,18 +1279,17 @@
         <p class="section-description">
 
             Hasan Labs is my personal technology environment
-            where I experiment with platforms, processes,
-            tools and ideas before turning them
-            into practical solutions.
+            where I experiment with platforms,
+            processes, technologies and ideas
+            before turning them into practical solutions.
 
         </p>
-
 
 
         <div class="grid-3">
 
 
-            <article class="card">
+            <article class="card fade-element">
 
                 <div class="card-icon">
                     ⚙️
@@ -397,17 +1300,23 @@
                 </h3>
 
                 <p>
-                    Service catalogues, incidents,
-                    service requests, ticket routing,
-                    workflows and ITSM concepts
-                    using Halo ITSM and ServiceNow.
+
+                    Service catalogues,
+                    incidents,
+                    service requests,
+                    ticket routing,
+                    workflows
+                    and ITSM concepts
+                    using tools such as
+                    Halo ITSM and ServiceNow.
+
                 </p>
 
             </article>
 
 
 
-            <article class="card">
+            <article class="card fade-element">
 
                 <div class="card-icon">
                     📊
@@ -418,17 +1327,21 @@
                 </h3>
 
                 <p>
+
                     BPMN modelling,
                     IST/SOLL process analysis,
-                    optimization and documentation
-                    using ADONIS and related methodologies.
+                    process optimization
+                    and documentation
+                    using ADONIS
+                    and related methodologies.
+
                 </p>
 
             </article>
 
 
 
-            <article class="card">
+            <article class="card fade-element">
 
                 <div class="card-icon">
                     ☁️
@@ -439,10 +1352,14 @@
                 </h3>
 
                 <p>
-                    Projects and experiments around
-                    Azure, Microsoft Intune,
-                    Citrix, Microsoft 365
+
+                    Projects and experiments
+                    around Microsoft Azure,
+                    Intune,
+                    Citrix,
+                    Microsoft 365
                     and endpoint technologies.
+
                 </p>
 
             </article>
@@ -457,9 +1374,9 @@
 
 
 
-<!-- =========================
+<!-- ==========================================
      PROJECTS
-========================= -->
+========================================== -->
 
 <section id="projects" class="dark-section">
 
@@ -476,10 +1393,21 @@
         </h2>
 
 
+        <p class="section-description">
+
+            Projects and concepts combining
+            technology,
+            business analysis,
+            process design
+            and digital transformation.
+
+        </p>
+
+
         <div class="grid-3">
 
 
-            <article class="card project-card">
+            <article class="card fade-element">
 
                 <span class="project-category">
                     Business Process Management
@@ -490,16 +1418,21 @@
                 </h3>
 
                 <p>
-                    Analysis and redesign of business processes
-                    using BPMN, IST/SOLL modelling,
-                    process metrics and optimization methods.
+
+                    Analysis and redesign
+                    of business processes
+                    using BPMN,
+                    IST/SOLL modelling,
+                    process metrics
+                    and optimization methods.
+
                 </p>
 
             </article>
 
 
 
-            <article class="card project-card">
+            <article class="card fade-element">
 
                 <span class="project-category">
                     IT Service Management
@@ -510,16 +1443,20 @@
                 </h3>
 
                 <p>
+
                     Concepts for service catalogues,
-                    ticket routing, responsibilities,
-                    SLA transparency and IT workflows.
+                    ticket routing,
+                    responsibilities,
+                    SLA transparency
+                    and structured IT workflows.
+
                 </p>
 
             </article>
 
 
 
-            <article class="card project-card">
+            <article class="card fade-element">
 
                 <span class="project-category">
                     AI & Automation
@@ -530,10 +1467,12 @@
                 </h3>
 
                 <p>
-                    Exploring how AI can simplify
-                    administrative processes,
+
+                    Exploring how AI
+                    can simplify administrative processes,
                     improve access to information
                     and automate repetitive tasks.
+
                 </p>
 
             </article>
@@ -548,9 +1487,9 @@
 
 
 
-<!-- =========================
+<!-- ==========================================
      AI & SOLUTIONS
-========================= -->
+========================================== -->
 
 <section id="solutions">
 
@@ -567,10 +1506,21 @@
         </h2>
 
 
+        <p class="section-description">
+
+            I am particularly interested
+            in identifying everyday operational problems
+            and solving them through technology,
+            process improvement,
+            automation and Artificial Intelligence.
+
+        </p>
+
+
         <div class="grid-3">
 
 
-            <article class="card">
+            <article class="card fade-element">
 
                 <div class="card-icon">
                     🤖
@@ -581,17 +1531,20 @@
                 </h3>
 
                 <p>
+
                     Using AI to support
                     knowledge management,
                     service desks,
-                    documents and business processes.
+                    document processing
+                    and business operations.
+
                 </p>
 
             </article>
 
 
 
-            <article class="card">
+            <article class="card fade-element">
 
                 <div class="card-icon">
                     🔄
@@ -602,16 +1555,19 @@
                 </h3>
 
                 <p>
-                    Identifying bottlenecks
+
+                    Understanding existing processes,
+                    identifying bottlenecks
                     and designing simpler,
                     faster and more efficient workflows.
+
                 </p>
 
             </article>
 
 
 
-            <article class="card">
+            <article class="card fade-element">
 
                 <div class="card-icon">
                     💡
@@ -622,10 +1578,13 @@
                 </h3>
 
                 <p>
-                    Combining cloud,
+
+                    Combining cloud technologies,
                     IT platforms,
-                    web technologies
+                    web technologies,
+                    business processes
                     and automation.
+
                 </p>
 
             </article>
@@ -640,9 +1599,9 @@
 
 
 
-<!-- =========================
+<!-- ==========================================
      TECHNOLOGIES
-========================= -->
+========================================== -->
 
 <section class="dark-section">
 
@@ -659,30 +1618,42 @@
         </h2>
 
 
-        <div class="tags">
+        <div class="tags fade-element">
 
             <span>Halo ITSM</span>
+
             <span>ServiceNow</span>
+
             <span>Microsoft Azure</span>
+
             <span>Microsoft Intune</span>
+
             <span>Citrix</span>
+
             <span>Microsoft 365</span>
+
             <span>SharePoint</span>
+
             <span>SCCM</span>
 
             <span>BPMN</span>
+
             <span>ADONIS</span>
 
             <span>Identity Management</span>
 
             <span>HTML</span>
+
             <span>CSS</span>
+
             <span>JavaScript</span>
 
             <span>Git</span>
+
             <span>GitHub</span>
 
-            <span>AI</span>
+            <span>Artificial Intelligence</span>
+
             <span>Automation</span>
 
         </div>
@@ -694,16 +1665,16 @@
 
 
 
-<!-- =========================
+<!-- ==========================================
      VISION
-========================= -->
+========================================== -->
 
 <section id="vision">
 
     <div class="container">
 
 
-        <div class="vision-box">
+        <div class="vision-box fade-element">
 
 
             <p class="section-label">
@@ -712,31 +1683,43 @@
 
 
             <h2 class="section-title">
+
                 Connecting technology,
                 processes and people.
+
             </h2>
 
 
             <p>
 
-                My goal is not simply to work with technology.
+                My goal is not simply
+                to work with technology.
 
-                I want to understand how organizations operate,
+                I want to understand
+                how organizations operate,
                 identify where processes can be improved
-                and use technology, automation and
-                Artificial Intelligence to create
-                meaningful solutions.
+                and use technology,
+                automation
+                and Artificial Intelligence
+                to create meaningful solutions.
 
             </p>
 
 
             <p>
 
-                In the long term, I want to contribute
-                to digital transformation projects across
-                <strong>Europe and the Middle East</strong>,
+                In the long term,
+                I want to contribute
+                to digital transformation projects
+                across
+
+                <strong>
+                    Europe and the Middle East
+                </strong>,
+
                 connecting technical expertise,
-                business needs and practical implementation.
+                business needs
+                and practical implementation.
 
             </p>
 
@@ -750,11 +1733,12 @@
 
 
 
-<!-- =========================
+<!-- ==========================================
      CONTACT
-========================= -->
+========================================== -->
 
-<section id="contact" class="contact dark-section">
+<section id="contact"
+         class="contact dark-section">
 
     <div class="container">
 
@@ -771,48 +1755,62 @@
 
         <p class="section-description contact-description">
 
-            I'm interested in exchanging ideas about
+            I'm always interested
+            in exchanging ideas about
             IT Service Management,
             Digital Workplace,
-            Business Processes,
+            Business Process Management,
             Artificial Intelligence,
-            Cloud and Digital Transformation.
+            Cloud Technologies,
+            Automation
+            and Digital Transformation.
 
         </p>
 
 
         <div class="buttons contact-buttons">
 
-            <a
-                href="mailto:YOUR-EMAIL"
-                class="btn btn-primary"
-            >
-                Contact Me
-            </a>
-
 
             <a
-                href="YOUR-LINKEDIN"
+                href="https://www.linkedin.com/in/hasan-mohammed-bsc-bb83b1329"
                 target="_blank"
-                class="btn btn-outline"
-            >
+                rel="noopener noreferrer"
+                class="btn btn-primary">
+
                 LinkedIn
+
             </a>
 
 
             <a
-                href="YOUR-GITHUB"
+                href="https://github.com/Hasan-Alawadi"
                 target="_blank"
-                class="btn btn-outline"
-            >
+                rel="noopener noreferrer"
+                class="btn btn-outline">
+
                 GitHub
+
             </a>
+
+
+            <a
+                href="https://www.instagram.com/hasan.jaafar.alwadi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline">
+
+                Instagram
+
+            </a>
+
 
         </div>
 
 
         <p class="location">
+
             📍 Vienna, Austria
+
         </p>
 
 
@@ -822,24 +1820,239 @@
 
 
 
-<!-- =========================
+<!-- ==========================================
      FOOTER
-========================= -->
+========================================== -->
 
 <footer>
 
     <p>
+
         © <span id="currentYear"></span>
+
         Hasan Labs · Hasan Alawadi · Vienna, Austria
+
     </p>
 
 </footer>
 
 
 
-<!-- JAVASCRIPT -->
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
 
-<script src="javascript.js"></script>
+<script>
+
+    /* ======================================
+       CURRENT YEAR
+    ====================================== */
+
+    const currentYear =
+        document.getElementById("currentYear");
+
+    if (currentYear) {
+
+        currentYear.textContent =
+            new Date().getFullYear();
+
+    }
+
+
+
+    /* ======================================
+       MOBILE MENU
+    ====================================== */
+
+    const menuToggle =
+        document.getElementById("menuToggle");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    if (menuToggle && navLinks) {
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle("open");
+
+            }
+        );
+
+    }
+
+
+
+    /* ======================================
+       NAVIGATION LINKS
+    ====================================== */
+
+    const navigationLinks =
+        document.querySelectorAll(
+            ".nav-links a"
+        );
+
+
+    navigationLinks.forEach(
+        function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    navLinks.classList.remove("open");
+
+                }
+            );
+
+        }
+    );
+
+
+
+    /* ======================================
+       SCROLL ANIMATION
+    ====================================== */
+
+    const animatedElements =
+        document.querySelectorAll(
+            ".fade-element"
+        );
+
+
+    const observer =
+        new IntersectionObserver(
+
+            function (entries) {
+
+                entries.forEach(
+                    function (entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target
+                                .classList
+                                .add("show");
+
+                        }
+
+                    }
+                );
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+    animatedElements.forEach(
+        function (element) {
+
+            observer.observe(element);
+
+        }
+    );
+
+
+
+    /* ======================================
+       ACTIVE NAVIGATION
+    ====================================== */
+
+    const sections =
+        document.querySelectorAll(
+            "section[id]"
+        );
+
+
+    window.addEventListener(
+        "scroll",
+        function () {
+
+            let currentSection = "";
+
+
+            sections.forEach(
+                function (section) {
+
+                    const sectionTop =
+                        section.offsetTop - 160;
+
+
+                    if (
+                        window.scrollY >= sectionTop
+                    ) {
+
+                        currentSection =
+                            section.getAttribute("id");
+
+                    }
+
+                }
+            );
+
+
+            navigationLinks.forEach(
+                function (link) {
+
+                    link.classList.remove("active");
+
+
+                    if (
+
+                        link.getAttribute("href") ===
+                        "#" + currentSection
+
+                    ) {
+
+                        link.classList.add("active");
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+
+    /* ======================================
+       NAVBAR EFFECT
+    ====================================== */
+
+    const navbar =
+        document.getElementById("navbar");
+
+
+    window.addEventListener(
+        "scroll",
+        function () {
+
+            if (window.scrollY > 50) {
+
+                navbar.style.background =
+                    "rgba(7, 11, 19, 0.97)";
+
+            }
+
+            else {
+
+                navbar.style.background =
+                    "rgba(11, 17, 32, 0.90)";
+
+            }
+
+        }
+    );
+
+</script>
 
 
 </body>
